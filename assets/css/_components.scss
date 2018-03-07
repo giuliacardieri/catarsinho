@@ -1,0 +1,74 @@
+.nav-wrapper {
+	padding: 0 25px;
+}
+
+.tabs {
+	.tab a {
+		@extend .white-text;
+	}
+	.indicator {
+		@extend .white;
+	}
+}
+
+.card {
+	cursor: pointer;
+	.card-image {
+		height: 250px;
+		overflow-y: hidden;
+		img {
+			-webkit-filter: blur(1.5px);
+		  -moz-filter: blur(1.5px);
+		  -o-filter: blur(1.5px);
+		  -ms-filter: blur(1.5px);
+		  filter: blur(1.5px);
+		}
+	}
+}
+
+.p--no-margin {
+	margin: 0;
+}
+
+.p--little-margin-top {
+	margin-top: 5px;
+}
+
+.btn, .btn-floating {
+	@extend .pink, .accent-2;
+}
+
+.btn-floating--add {
+	bottom: 20px;
+	right: 10px;
+	position: fixed;
+}
+
+.icons--p {
+	vertical-align: middle;
+}
+
+img.responsive-img {
+	border-radius: 10px;
+	max-width: 45vw;
+	&.small-img {
+		@media (min-width: 601px) {
+			max-width: 25vw;
+		}
+	}
+}
+
+.row--no-margin-bottom {
+	margin-bottom: 0;
+}
+
+.button-wrapper--login-info {
+	@media (max-width: 600px) {
+		bottom: 10px;
+		left: 0;
+		position: fixed;
+		text-align: center;
+		width: 100vw;
+		z-index: 1;
+	}
+}
