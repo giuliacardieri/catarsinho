@@ -23,7 +23,7 @@ class Home extends CI_Controller {
         $data['logged'] = $logged;
         $data['user_tab'] = false;
         $data['title'] = 'Home';
-        $data['active'] = 'home';
+        $data['active'] = 'home'; 
 
         $this->load->view('templates/head', $data);
         $this->load->view('templates/modal_add', $data);
@@ -119,7 +119,7 @@ class Home extends CI_Controller {
             'value' => $this->input->post('value'),
             'photo' => $file_name,
             'user_id' => $this->session->userdata['user_id'],
-            'date_added' => date("Y-m-d")
+            'time_added' => date("Y-m-d H:i:s")
         );
 
         $id = $this->info_model->insert_project($project);
@@ -223,7 +223,7 @@ class Home extends CI_Controller {
     }
 
     public function get_visualize_modal($project_id)
-    {
+    {   
         $data['project'] = $this->info_model->get_project($project_id);
         return $this->load->view('templates/modal_visualize', $data);
     }

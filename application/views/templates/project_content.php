@@ -33,8 +33,15 @@
               <i class="material-icons icons--p">attach_money</i>
               R$ <?php echo $project_info['value']; ?>
             </p>
+              <p>
+                <i class="material-icons icons--p">access_time</i>
+                <?php if ($project_info['remaining_time'] >= 0): ?>
+                  <?php echo $project_info['remaining_time']; ?> horas restantes
+                <?php else: ?>
+                  Projeto encerrado
+            </p>      
+            <?php endif; ?>
           </div>
-
           <?php if ($user_tab): ?>
             <div class="card-action">
               <a href="#" data-href="<?php echo site_url('home/get_edit_modal/' . $project_info['id']); ?>" class="blue-text text-darken-4 btn--edit">Edit</a>
@@ -53,11 +60,13 @@
     <a href="#modalAdd" class="right modal-trigger btn-floating btn-large btn-floating--add waves-effect waves-light"><i class="material-icons">add</i></a>
   <?php endif; ?>
 
-<?php elseif($user_tab == true): ?>
+<?php else: ?>
   <div class="row">
     <div class="col s12">
-      <p>Ops... Você ainda não criou um projeto.</p>
-      <a href="#modalAdd" class="modal-trigger btn waves-effect waves-light">Criar projeto</a>
+      <p>Ops... Nenhum projeto foi criado.</p>
+      <?php if ($user_tab == true): ?>
+        <a href="#modalAdd" class="modal-trigger btn waves-effect waves-light">Criar projeto</a>
+      <?php endif; ?>
     </div>
   </div>
 <?php endif; ?>

@@ -75,9 +75,8 @@ $( document ).ready(function(){
   	e.preventDefault();
     $.get( $(this).data('href'), function(data) {
       $('.modalEdit-content').html(data);
-      Materialize.updateTextFields();
-    $('input#title_add, textarea#description_add').characterCounter();
       $('input#title_edit, textarea#description_edit').characterCounter();
+      Materialize.updateTextFields();
   		$('#modalEdit').modal('open');
     });
   });

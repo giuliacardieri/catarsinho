@@ -12,10 +12,17 @@
       <p><?php echo $project['description']; ?></p>
       <p class="p--little-margin-top">por <?php echo $project['owner_fname'] . ' ' . $project['owner_lname']; ?></p>
       <p>Valor a arrecadar: R$ <?php echo $project['value']; ?></p>
+      <?php if ($project['remaining_time'] >= 0): ?>
+        <p>Tempo restante: <?php echo $project['remaining_time']; ?> horas</p>
+      <?php else: ?>
+        <p>O tempo para apoiar esse projeto acabou</p>
+      <?php endif; ?>
     </div>
   </div>
 </div>
 <div class="modal-footer">
   <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-  <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Apoiar projeto</a>
+  <?php if ($project['remaining_time'] > 0): ?>
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn">Apoiar projeto</a>
+  <?php endif; ?>
 </div>

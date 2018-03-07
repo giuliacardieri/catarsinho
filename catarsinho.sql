@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 07-Mar-2018 às 03:11
+-- Generation Time: 07-Mar-2018 às 04:20
 -- Versão do servidor: 5.7.18
 -- PHP Version: 5.6.30
 
@@ -49,18 +49,18 @@ CREATE TABLE `project` (
   `photo` varchar(50) NOT NULL,
   `value` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `date_added` date DEFAULT NULL
+  `time_added` datetime DEFAULT NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `project`
 --
 
-INSERT INTO `project` (`id`, `title`, `description`, `photo`, `value`, `user_id`, `date_added`) VALUES
-(2, 'Construção de luminária sustentável de LED', 'Atualmente é necessário pensar na sustenbilidade ao criar um novo projeto. Com a luminária sustentável de LED podemos obter não só um produto bonito e agradável, como sustentável e fácil de manter. Com alta durabilidade!', 'luminaria.jpeg', 500, 7, '2018-01-12'),
-(25, 'Mr Dinokiki e os elementos interativos', 'Mr Dinokiki, ou Dinokiki (a sílaba forte é no segundo KI), é um personagem que criei em 2014 para aprender a usar JavaScript em um site. Contudo, desde 2014 o Dino e eu crescemos, e com isso veio um novo objetivo: proporcionar uma experiência divertida e interativa ao usuário. Ajude o Dinokiki!', 'bfbdee62b1eb754fe9c4e2a5c489b6c5.png', 250, 6, '2018-03-05'),
-(27, 'App para vagas de emprego de tecnologia em Bauru', 'Um projeto para criar um app (inicialmente android) com o objetivo de juntar todas as vagas na área de tecnologia em Bauru-SP. Esperamos que isso ajude todos as pessoas que procuram empregos na área de tecnologia na região de Bauru.', '04e73cdaf4481cc12c865e0b324c29c0.png', 407, 9, '2018-03-07'),
-(28, 'PWA Agenda', 'Um PWA de agenda personalizável em relação ao design, funcionalidades, modalidades e categorias. Com objetivo de auxiliar o tratamento de coisas específicas como Diabetes, dieta, execução de projeto, planejamento em geral.', '96147aaa91e2c9d7ea9795f91812f904.png', 475, 6, '2018-03-07');
+INSERT INTO `project` (`id`, `title`, `description`, `photo`, `value`, `user_id`, `time_added`) VALUES
+(2, 'Construção de luminária sustentável de LED', 'Atualmente é necessário pensar na sustenbilidade ao criar um novo projeto. Com a luminária sustentável de LED podemos obter não só um produto bonito e agradável, como sustentável e fácil de manter. Com alta durabilidade!', 'luminaria.jpeg', 500, 7, '2018-03-06 22:30:00'),
+(25, 'Mr Dinokiki e os elementos interativos', 'Mr Dinokiki, ou Dinokiki (a sílaba forte é no segundo KI), é um personagem que criei em 2014 para aprender a usar JavaScript em um site. Contudo, desde 2014 o Dino e eu crescemos, e com isso veio um novo objetivo: proporcionar uma experiência divertida e interativa ao usuário. Ajude o Dinokiki!', 'bfbdee62b1eb754fe9c4e2a5c489b6c5.png', 250, 6, '2018-03-06 19:30:00'),
+(27, 'App para vagas de emprego de tecnologia em Bauru', 'Um projeto para criar um app (inicialmente android) com o objetivo de juntar todas as vagas na área de tecnologia em Bauru-SP. Esperamos que isso ajude todos as pessoas que procuram empregos na área de tecnologia na região de Bauru.', '04e73cdaf4481cc12c865e0b324c29c0.png', 407, 9, '2018-03-06 08:30:00'),
+(28, 'PWA Agenda', 'Um PWA de agenda personalizável em relação ao design, funcionalidades, modalidades e categorias. Com objetivo de auxiliar o tratamento de coisas específicas como Diabetes, dieta, execução de projeto, planejamento em geral.', '96147aaa91e2c9d7ea9795f91812f904.png', 475, 6, '2018-03-04 09:30:00');
 
 -- --------------------------------------------------------
 
@@ -81,10 +81,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`fname`, `lname`, `email`, `password`, `id`) VALUES
-('Giulia', 'Cardieri', 'giulia@gmail.com', 'cf376e9f17e5caf4b94d2457a35f65f5f0197226', 6),
-('Gabriel', 'Hossu', 'gabriel@hotmail.com', 'cf376e9f17e5caf4b94d2457a35f65f5f0197226', 7),
-('Mr', 'Dinokiki', 'dino@gmail.com', 'cf376e9f17e5caf4b94d2457a35f65f5f0197226', 8),
-('Alessandra', 'Sasaki', 'ale@gmail.com', 'cf376e9f17e5caf4b94d2457a35f65f5f0197226', 9);
+('Giulia', 'Cardieri', 'giulia.cardieri@gmail.com', 'cf376e9f17e5caf4b94d2457a35f65f5f0197226', 6),
+('Gabriel', 'Hossu', 'gabrielhossu@hotmail.com', 'lolala', 7),
+('Mr', 'Dinokiki', 'dinokikiteam@gmail.com', 'cf376e9f17e5caf4b94d2457a35f65f5f0197226', 8),
+('Alessandra', 'Sasaki', 'ale.sasaki@gmail.com', 'cf376e9f17e5caf4b94d2457a35f65f5f0197226', 9);
 
 --
 -- Indexes for dumped tables
@@ -117,12 +117,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
