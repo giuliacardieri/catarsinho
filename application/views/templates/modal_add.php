@@ -28,7 +28,7 @@
           <div class="row">
             <div class="input-field col s12">
               <input id="photo_add" name="photo" type="file" class="validate" accept="image/*" required>
-              <label for="photo">Foto</label>
+              <label class="label--photo_add" for="photo">Foto</label>
             </div>
           </div>
           <div class="row">
