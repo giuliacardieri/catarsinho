@@ -25,7 +25,7 @@ CodeIgniter 3.0.1
 # Bugs conhecidos e TODO
 Nenhuma ação acontece quando o usuário clica no botão "Apoiar Projeto".
 
-Possíveis bugs relativos a validação dos campos de input.
+Não há validação via JS ou PHP nos campos, por enquanto você consegue adicionar entradas vazias.
 
 Faltam botões cancelar em vários modais.
 
